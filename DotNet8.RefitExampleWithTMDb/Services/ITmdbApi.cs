@@ -1,5 +1,5 @@
-﻿using Refit;
-using System.Threading.Tasks;
+﻿using DotNet8.RefitExampleWithTMDb.Models.Actor;
+using Refit;
 
 namespace DotNet8.RefitExampleWithTMDb.Services
 {

@@ -1,5 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
+namespace DotNet8.RefitExampleWithTMDb.Models.Actor;
 public class Actor
 {
     [JsonPropertyName("id")]
