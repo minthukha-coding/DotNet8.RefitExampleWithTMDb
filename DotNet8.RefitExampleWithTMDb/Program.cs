@@ -13,7 +13,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-var authToken = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0ZDE0NGYyNTg5Y2M2ODQxMzBhNzQyNjJiNmI2NjczYiIsIm5iZiI6MTcyMTk4ODkxMS4xNDIwNTIsInN1YiI6IjY1NmEyZTYyMDg1OWI0MDBmZjc0N2NjOSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.rV89UG5ozAK98KHZHjHh0XRDqlFhOEILcb4-IKlNUJA";
+var authToken = "YOUR_TMDB_API_KEY";
 
 builder.Services
     .AddRefitClient<ITmdbApi>(new RefitSettings
