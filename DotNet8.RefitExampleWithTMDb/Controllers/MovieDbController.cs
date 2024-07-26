@@ -1,7 +1,9 @@
-﻿using DotNet8.RefitExampleWithTMDb.Services;
+﻿using DotNet8.RefitExampleWithTMDb.Models.Movie;
+using DotNet8.RefitExampleWithTMDb.Services;
 using Microsoft.AspNetCore.Mvc;
 using Refit;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace DotNet8.RefitExampleWithTMDb.Controllers
 {
@@ -22,6 +24,20 @@ namespace DotNet8.RefitExampleWithTMDb.Controllers
             try
             {
                 var response = await _tmdbApi.GetActors(name);
+                return Ok(response);
+            }
+            catch (ApiException ex)
+            {
+                return StatusCode((int)ex.StatusCode, ex.Content);
+            }
+        }
+
+        [HttpGet("actors/{actorId}/movies")]
+        public async Task<IActionResult> GetMovies(int actorId)
+        {
+            try
+            {
+                var response = await _tmdbApi.GetMovies(actorId);
                 return Ok(response);
             }
             catch (ApiException ex)

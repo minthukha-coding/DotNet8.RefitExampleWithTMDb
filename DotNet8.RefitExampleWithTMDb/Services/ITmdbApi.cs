@@ -1,4 +1,5 @@
 ﻿using DotNet8.RefitExampleWithTMDb.Models.Actor;
+using DotNet8.RefitExampleWithTMDb.Models.Movie;
 using Refit;
 
 namespace DotNet8.RefitExampleWithTMDb.Services
@@ -8,5 +9,8 @@ namespace DotNet8.RefitExampleWithTMDb.Services
     {
         [Get("/search/person?query={name}")]
         Task<ActorList> GetActors(string name);
+
+        [Get("/person/{actorId}/movie_credits?language=en-US")]
+        Task<MovieList> GetMovies(int actorId);
     }
 }
